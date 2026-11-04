@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#0a0e27" />
-    <title>Página não encontrada (404) - PixelMinds</title>
-    <!--
-      IMPORTANTE (GitHub Pages / URLs aninhados): se a página 404 for aberta
-      num caminho como /PixelMinds/qualquer/coisa, os ficheiros relativos
-      (styles.css, imagens) deixam de carregar. Nesse caso, descomente a linha
-      abaixo e ajuste para a raiz do seu site:
-    -->
-    <!-- <base href="/PixelMinds/" /> -->
+    <title data-i18n="meta.title404">
+      Página não encontrada (404) - PixelMinds
+    </title>
+
+    <base href="PixelMinds" />
     <link rel="icon" href="PM.png" />
     <script>
       document.documentElement.classList.add("js");
@@ -24,7 +21,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-</head>
+  </head>
   <body>
     <!-- Animated Background -->
     <div class="gaming-bg" aria-hidden="true">
@@ -33,7 +30,11 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar" aria-label="Navegação principal">
+    <nav
+      class="navbar"
+      data-i18n-aria-label="nav.aria"
+      aria-label="Navegação principal"
+    >
       <div class="nav-container">
         <div class="logo">
           <h2 class="section-title">
@@ -45,13 +46,34 @@
 
         <ul class="nav-menu" id="nav-menu">
           <li><a href="index.html#home" class="nav-link">HOME</a></li>
-          <li><a href="index.html#about" class="nav-link">SOBRE</a></li>
           <li>
-            <a href="index.html#projectos" class="nav-link">PROJECTOS</a>
+            <a data-i18n="nav.about" href="index.html#about" class="nav-link"
+              >SOBRE</a
+            >
           </li>
-          <li><a href="index.html#skills" class="nav-link">SERVIÇOS</a></li>
           <li>
-            <a href="index.html#contact" class="nav-link">CONTACTOS</a>
+            <a
+              data-i18n="nav.projects"
+              href="index.html#projectos"
+              class="nav-link"
+              >PROJECTOS</a
+            >
+          </li>
+          <li>
+            <a
+              data-i18n="nav.services"
+              href="index.html#skills"
+              class="nav-link"
+              >SERVIÇOS</a
+            >
+          </li>
+          <li>
+            <a
+              data-i18n="nav.contacts"
+              href="index.html#contact"
+              class="nav-link"
+              >CONTACTOS</a
+            >
           </li>
         </ul>
 
@@ -72,19 +94,19 @@
     <main class="error-page">
       <div class="error-box">
         <div class="error-code gradient-text" aria-hidden="true">404</div>
-        <h1 class="error-title">Página não encontrada</h1>
-        <p class="error-text">
+        <h1 data-i18n="err.title" class="error-title">Página não encontrada</h1>
+        <p data-i18n="err.text" class="error-text">
           Ups! A página que procura não existe, foi movida ou o endereço foi
           escrito incorrectamente.
         </p>
 
         <div class="error-actions">
           <a href="index.html" class="btn btn-primary">
-            <span class="btn-text">VOLTAR AO INÍCIO</span>
+            <span data-i18n="err.home" class="btn-text">VOLTAR AO INÍCIO</span>
             <span class="btn-icon">→</span>
           </a>
           <a href="index.html#contact" class="btn btn-secondary">
-            <span class="btn-text">FALAR CONNOSCO</span>
+            <span data-i18n="err.contact" class="btn-text">FALE CONNOSCO</span>
           </a>
         </div>
       </div>
@@ -92,11 +114,24 @@
 
     <footer class="footer error-footer">
       <div class="footer-bottom">
-        <p>&copy; 2026 PixelMinds. Todos os direitos reservados.</p>
-        <p>Desenvolvido com paixão e café.</p>
+        <p data-i18n="footer.rights">
+          &copy; 2026 PixelMinds. Todos os direitos reservados.
+        </p>
+        <p data-i18n="footer.built">Desenvolvido com paixão e café.</p>
       </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // Mostra o endereço que não foi encontrado (texto, nunca HTML)
+      (function () {
+        var el = document.getElementById("errorPath");
+        var path = location.pathname + location.search;
+        if (el && path && path !== "/404.html") {
+          el.textContent = path;
+          el.hidden = false;
+        }
+      })();
+    </script>
   </body>
 </html>
