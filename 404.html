@@ -24,166 +24,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <style>
-      .error-page {
-        min-height: 100vh;
-        min-height: 100svh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8rem 2rem 4rem;
-        position: relative;
-        z-index: 1;
-        text-align: center;
-      }
-
-      .error-box {
-        width: 100%;
-        max-width: 760px;
-        background: rgba(30, 39, 73, 0.5);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(0, 217, 255, 0.2);
-        border-radius: 24px;
-        padding: 3rem;
-        animation: popIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-      }
-
-      .error-code {
-        font-family: var(--font-display);
-        font-size: clamp(5rem, 22vw, 10rem);
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: -0.04em;
-        margin-bottom: 0.5rem;
-        animation: glitch 4s infinite;
-      }
-
-      @keyframes glitch {
-        0%,
-        92%,
-        100% {
-          transform: translate(0);
-          filter: none;
-        }
-        94% {
-          transform: translate(-3px, 1px);
-          filter: drop-shadow(3px 0 var(--color-accent));
-        }
-        96% {
-          transform: translate(3px, -1px);
-          filter: drop-shadow(-3px 0 var(--color-primary));
-        }
-      }
-
-      .error-title {
-        font-family: var(--font-display);
-        font-size: clamp(1.4rem, 4.5vw, 2.2rem);
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .error-text {
-        color: var(--color-text-muted);
-        font-size: 1.25rem;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      .error-path {
-        display: inline-block;
-        max-width: 100%;
-        margin-bottom: 2rem;
-        padding: 0.5rem 1rem;
-        background: rgba(10, 14, 39, 0.6);
-        border: 1px dashed rgba(0, 217, 255, 0.3);
-        border-radius: 10px;
-        color: var(--color-primary);
-        font-family: var(--font-display);
-        font-size: 0.95rem;
-        overflow-wrap: anywhere;
-      }
-
-      .error-actions {
-        display: flex;
-        justify-content: center;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-        margin-bottom: 2.5rem;
-      }
-
-      .error-links {
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(0, 217, 255, 0.15);
-      }
-
-      .error-links p {
-        color: var(--color-text-muted);
-        margin-bottom: 0.75rem;
-      }
-
-      .error-links nav {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
-
-      .error-links a {
-        padding: 0.6rem 1.1rem;
-        background: rgba(0, 217, 255, 0.1);
-        border: 1px solid rgba(0, 217, 255, 0.2);
-        border-radius: 12px;
-        color: var(--color-primary);
-        text-decoration: none;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 0.9rem;
-        transition: var(--transition-smooth);
-      }
-
-      .error-links a:hover {
-        background: rgba(0, 217, 255, 0.2);
-        border-color: var(--color-primary);
-      }
-
-      .error-footer {
-        padding: 1.5rem 1rem;
-      }
-
-      .error-footer .footer-bottom {
-        border-top: none;
-        padding-top: 0;
-        font-size: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        .error-page {
-          padding: 6.5rem 1rem 3rem;
-        }
-
-        .error-box {
-          padding: 2rem 1.25rem;
-          border-radius: 20px;
-        }
-
-        .error-text {
-          font-size: 1.05rem;
-        }
-
-        .error-actions {
-          flex-direction: column;
-          gap: 1rem;
-          margin-bottom: 2rem;
-        }
-
-        .error-actions .btn {
-          width: 100%;
-          justify-content: center;
-        }
-      }
-    </style>
-  </head>
+</head>
   <body>
     <!-- Animated Background -->
     <div class="gaming-bg" aria-hidden="true">
@@ -234,11 +75,8 @@
         <h1 class="error-title">Página não encontrada</h1>
         <p class="error-text">
           Ups! A página que procura não existe, foi movida ou o endereço foi
-          escrito incorrectamente. Mas não se preocupe, ajudamos a encontrar o
-          caminho de volta.
+          escrito incorrectamente.
         </p>
-
-        <code class="error-path" id="errorPath" hidden></code>
 
         <div class="error-actions">
           <a href="index.html" class="btn btn-primary">
@@ -249,37 +87,16 @@
             <span class="btn-text">FALAR CONNOSCO</span>
           </a>
         </div>
-
-        <div class="error-links">
-          <p>Ou visite uma destas páginas:</p>
-          <nav aria-label="Ligações úteis">
-            <a href="index.html#about">Sobre</a>
-            <a href="index.html#projectos">Projectos</a>
-            <a href="mindgest.html">MindGest ERP</a>
-            <a href="index.html#skills">Serviços</a>
-            <a href="index.html#contact">Contactos</a>
-          </nav>
-        </div>
       </div>
     </main>
 
     <footer class="footer error-footer">
       <div class="footer-bottom">
         <p>&copy; 2026 PixelMinds. Todos os direitos reservados.</p>
+        <p>Desenvolvido com paixão e café.</p>
       </div>
     </footer>
 
     <script src="script.js"></script>
-    <script>
-      // Mostra o endereço que não foi encontrado (texto, nunca HTML)
-      (function () {
-        var el = document.getElementById("errorPath");
-        var path = location.pathname + location.search;
-        if (el && path && path !== "/404.html") {
-          el.textContent = path;
-          el.hidden = false;
-        }
-      })();
-    </script>
   </body>
 </html>
